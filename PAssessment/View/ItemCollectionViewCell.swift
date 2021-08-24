@@ -40,9 +40,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         containerView.layer.cornerRadius = 6
         containerView.clipsToBounds = true
-        
-        self.containerView.layer.borderColor = UIColor.black.cgColor
-        self.containerView.layer.borderWidth = 1
     }
 
     override func awakeFromNib() {

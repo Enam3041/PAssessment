@@ -41,7 +41,6 @@ extension StoreVC: UITableViewDelegate, UITableViewDataSource{
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StoreTableViewCell") as? StoreTableViewCell else { return UITableViewCell() }
         let storeItem = StoreManager.shared.cart[indexPath.row]
-       // cell.delegate = self
         cell.storeItem = storeItem
 
         return cell
