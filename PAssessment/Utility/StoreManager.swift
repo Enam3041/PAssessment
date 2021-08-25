@@ -13,7 +13,6 @@ class StoreManager {
     var valueChanged : ((Bool)->())?
     
     func addItem(_ item:Item) {
-        if cart.count < 5 {
         let filterCart = cart.filter{($0.item.name == item.name)}
         if filterCart.count > 0 {
             cart = cart.map {
@@ -23,6 +22,7 @@ class StoreManager {
                 return $0
             }
         }else{
+            if cart.count < 5 {
             cart.append(StoreItem.init(item, quantity: 1))
         }
     }
@@ -39,7 +39,6 @@ class StoreManager {
     }
     
     func removeItem(_ item:Item) {
-        if cart.count < 5 {
         let filterCart = cart.filter{($0.item.name == item.name)}
         if filterCart.count > 0 {
             if filterCart[0].quantity == 1 {
@@ -55,7 +54,6 @@ class StoreManager {
               }
             }
         }
-    }
         
     }
 
