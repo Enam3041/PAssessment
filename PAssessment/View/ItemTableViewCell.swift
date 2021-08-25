@@ -48,13 +48,17 @@ extension ItemTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource
       }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
+            
+        if  items.count > indexPath.row {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
+
             let item = items[indexPath.row]
             cell.item = item
-        
+            return cell
 
-        return cell
+        }else{
+            return UICollectionViewCell()
+        }
 
       }
     
