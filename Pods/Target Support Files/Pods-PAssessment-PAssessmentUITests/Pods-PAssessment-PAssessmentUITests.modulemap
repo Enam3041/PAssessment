@@ -1,0 +1,6 @@
+framework module Pods_PAssessment_PAssessmentUITests {
+  umbrella header "Pods-PAssessment-PAssessmentUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
